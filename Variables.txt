@@ -1,0 +1,12 @@
+For the sake of convenience we should rename every variable in the math equations for use in our code. Below are the renames that have 
+alredy been established.
+
+r = growthRate
+N = populationSize
+K = carryCapacity
+v = heritable
+d1 = drug1Mortality
+d2 = drug2Mortality
+y1 = drug1Concentration
+y2 = drug2Concentration
+beta = magnitude
