@@ -15,16 +15,16 @@ def GFunction(growthRate, populationSize, carryCapacity, heritable, drug1Mortali
                    (magnitude * float(drug1Concentration) * float(drug2Concentration)))
     print(GFResult)
 
-def LinearTradeoff(drug1Investment): # this function can accommodate either drug
+def LinearTradeoff(drugInvestment): # this function can accommodate either drug
     LTResult = (1 - float(drug1Investment))
     print(LTResult)
 
-def Drug1Mortality(drug1Resistance, drug1Investment, drug2Investment):
-    D1M = (1 / (drug1Resistance + (drug1Investment * drug2Investment)))
+def Drug1Mortality(drug1Resistance, drugInvestment, drugAllocation):
+    D1M = (1 / (drug1Resistance + (drugInvestment * drugAllocation)))
     print(D1M)
 
-def Drug2Mortality(drug2Resistance, drug1Investment, drug2Investment, d2IDeriv):
-    D2M = (1 / (drug2Resistance + (drug1Investment * d2IDerivative * drug2Investment)))
+def Drug2Mortality(drug2Resistance, drugInvestment, drugAllocation, dADerivative):
+    D2M = (1 / (drug2Resistance + (drugInvestment * dADerivative * drugAllocation)))
     print(D2M)
 
 if __name__ == "__main__": # All values currently shown below are just test values.
