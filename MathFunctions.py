@@ -6,6 +6,7 @@ def TumorMortality(populationSize, growthRate, carryCapacity, drug1Mortality, dr
                                   - (float(drug2Mortality) * float(drug2Concentration))
                                   - (magnitude * float(drug1Concentration) * float(drug2Concentration))))
     print(TMResult)
+    return TMResult
 
 def GFunction(growthRate, populationSize, carryCapacity, heritable, drug1Mortality,
               drug2Mortality, drug1Concentration, drug2Concentration, magnitude):
@@ -14,18 +15,22 @@ def GFunction(growthRate, populationSize, carryCapacity, heritable, drug1Mortali
                    (float(drug2Mortality) * heritable * float(drug2Concentration)) -
                    (magnitude * float(drug1Concentration) * float(drug2Concentration)))
     print(GFResult)
+    return GFResult
 
 def LinearTradeoff(drugInvestment): # this function can accommodate either drug
     LTResult = (1 - float(drug1Investment))
     print(LTResult)
+    return LTResult
 
 def Drug1Mortality(drug1Resistance, drugInvestment, drugAllocation):
     D1M = (1 / (drug1Resistance + (drugInvestment * drugAllocation)))
     print(D1M)
+    return D1M
 
 def Drug2Mortality(drug2Resistance, drugInvestment, drugAllocation, dADerivative):
     D2M = (1 / (drug2Resistance + (drugInvestment * dADerivative * drugAllocation)))
     print(D2M)
+    return D2M
 
 if __name__ == "__main__": # All values currently shown below are just test values.
                            # I don't know which of these will actually be decimals.
