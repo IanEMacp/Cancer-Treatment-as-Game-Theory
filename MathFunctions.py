@@ -24,7 +24,7 @@ def Drug1Mortality(drug1Resistance, drug1Investment, drug2Investment):
     print(D1M)
 
 def Drug2Mortality(drug2Resistance, drug1Investment, drug2Investment, d2IDeriv):
-    D2M = (1 / (drug2Resistance + (drug1Investment * d2IDeriv * drug2Investment)))
+    D2M = (1 / (drug2Resistance + (drug1Investment * d2IDerivative * drug2Investment)))
     print(D2M)
 
 if __name__ == "__main__": # All values currently shown below are just test values.
