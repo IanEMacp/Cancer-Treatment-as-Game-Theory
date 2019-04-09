@@ -32,6 +32,10 @@ def Drug2Mortality(drug2Resistance, drugInvestment, drugAllocation, dADerivative
     print(D2M)
     return D2M
 
+def CarryingCapacity([v1, v2], [u1, u2], maxCarryCap, standardVarianceOfGaussianFunction):
+  return maxCarryCap^((-v1^2)/(2 * standardVarianceOfGaussianFunction))
+
+
 if __name__ == "__main__": # All values currently shown below are just test values.
                            # I don't know which of these will actually be decimals.
     TumorMortality(100,0.5,10,0.2,0.3,0.5,0.5,1)
