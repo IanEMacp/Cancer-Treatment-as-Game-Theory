@@ -17,10 +17,14 @@ def GFunction(growthRate, populationSize, carryCapacity, heritable, drug1Mortali
     print(GFResult)
     return GFResult
 
-def LinearTradeoff(drugInvestment): # this function can accommodate either drug
-    LTResult = (1 - float(drug1Investment))
-    print(LTResult)
-    return LTResult
+def stratLinearTradeoff(drugInvestment): # this function can accommodate either drug
+    return (1 - float(drug1Investment))
+
+def stratConcaveTradeoff(drugInvestment):
+  return (1 - sqrt(1 - (drugInvestment - 1)^2))
+
+def stratConvexTradeoff(drugInvestment):
+  return sqrt(1 - drugInvestment^2)
 
 def Drug1Mortality(drug1Resistance, drugInvestment, drugAllocation):
     D1M = (1 / (drug1Resistance + (drugInvestment * drugAllocation)))
