@@ -2,6 +2,7 @@
 import random as r
 
 class Cell:
+    mortality = 100
     
 class Tumor:
 
