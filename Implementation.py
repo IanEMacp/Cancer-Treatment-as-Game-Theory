@@ -28,6 +28,9 @@ class Tumor:
         self.population = initialPopulation
         self.growthRate = growthRate
 
+  def age(self):
+    self.population = list(map(lambda cell: cell.age(), self.population))
+
   def reproduce(self):
     self.population = flatten(list(map(lambda cell: cell.reproduce(), self.population)))
 
