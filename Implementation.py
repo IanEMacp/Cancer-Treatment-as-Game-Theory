@@ -2,30 +2,38 @@
 import random as r
 
 class Cell:
-    mortality = 100
+  def __init__(self, health = 100, resistence1 = 0, resistence2 = 0, mortalityRate = 20):
+        self.health = health
+        self.resistence1 = resistence1
+        self.resistence2 = resistence2
+        self.mortalityRate = mortalityRate
+
+  def age(self):
+    self.health = self.health - self.mortalityRate
+    return self
+
+  def mutate(self):
+    #return mutated cell
+    pass
+
+  def reproduce(self):
+    #return self w/ or w/o copies
+    pass
+
     
 class Tumor:
 
-  def __init__(self, initialPopulation, carryCapacity=100, growthRate=10):
+  def __init__(self, initialPopulation=list(), carryCapacity=100, growthRate=10):
         self.carryCapacity = carryCapacity
         self.population = initialPopulation
         self.growthRate = growthRate
 
-  def Mortality(self, drug1Mortality, drug2Mortality,
-                       drug1Concentration, drug2Concentration, magnitude):
-        TMResult = (population.size() * (float(self.growthRate) * (1 - (population.size() / self.carryCapacity))
-                                      - (float(drug1Mortality) * float(drug1Concentration))
-                                      - (float(drug2Mortality) * float(drug2Concentration))
-                                      - (magnitude * float(drug1Concentration) * float(drug2Concentration))))
-        return TMResult
+  def reproduce(self):
+    self.population = flatten(list(map(lambda cell: cell.reproduce(), self.population)))
 
-def GFunction(growthRate, populationSize, carryCapacity, heritable, drug1Mortality,
-              drug2Mortality, drug1Concentration, drug2Concentration, magnitude):
-    GFResult = (float(growthRate) * (1 - (populationSize / (carryCapacity * heritable)))
-                   - (float(drug1Mortality) * heritable * float(drug1Concentration)) -
-                   (float(drug2Mortality) * heritable * float(drug2Concentration)) -
-                   (magnitude * float(drug1Concentration) * float(drug2Concentration)))
-    return GFResult
+  def mutate(self):
+    self.population = list(map(lambda cell: cell.mutate(), self.population))
+
 
 if __name__ == "__main__": # All values currently shown below are just test values.
                            # I don't know which of these will actually be decimals.
