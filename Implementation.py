@@ -4,16 +4,14 @@ import random as r
 class Cell:
     
 class Tumor:
-    
-
-def TumorMortality(populationSize, growthRate, carryCapacity, drug1Mortality, drug2Mortality,
-                   drug1Concentration, drug2Concentration, magnitude):
-    TMResult = (populationSize * (float(growthRate) * (1 - (populationSize / carryCapacity))
-                                  - (float(drug1Mortality) * float(drug1Concentration))
-                                  - (float(drug2Mortality) * float(drug2Concentration))
-                                  - (magnitude * float(drug1Concentration) * float(drug2Concentration))))
-    print(TMResult)
-    return TMResult
+    def TumorMortality(populationSize, growthRate, carryCapacity, drug1Mortality, drug2Mortality,
+                       drug1Concentration, drug2Concentration, magnitude):
+        TMResult = (populationSize * (float(growthRate) * (1 - (populationSize / carryCapacity))
+                                      - (float(drug1Mortality) * float(drug1Concentration))
+                                      - (float(drug2Mortality) * float(drug2Concentration))
+                                      - (magnitude * float(drug1Concentration) * float(drug2Concentration))))
+        print(TMResult)
+        return TMResult
 
 def GFunction(growthRate, populationSize, carryCapacity, heritable, drug1Mortality,
               drug2Mortality, drug1Concentration, drug2Concentration, magnitude):
