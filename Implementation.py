@@ -6,12 +6,12 @@ class Cell:
     
 class Tumor:
 
-  def __init__(self, carryCapacity=100, growthRate=10):
+  def __init__(self, initialPopulation, carryCapacity=100, growthRate=10):
         self.carryCapacity = carryCapacity
-        self.population
-        self.growthRate
+        self.population = initialPopulation
+        self.growthRate = growthRate
 
-  def Mortality(self, populationSize, drug1Mortality, drug2Mortality,
+  def Mortality(self, drug1Mortality, drug2Mortality,
                        drug1Concentration, drug2Concentration, magnitude):
         TMResult = (population.size() * (float(self.growthRate) * (1 - (population.size() / self.carryCapacity))
                                       - (float(drug1Mortality) * float(drug1Concentration))
