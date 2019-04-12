@@ -3,6 +3,7 @@ import random as r
 
 class Cell:
     
+class Tumor:
     
 
 def TumorMortality(populationSize, growthRate, carryCapacity, drug1Mortality, drug2Mortality,
