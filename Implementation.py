@@ -13,12 +13,21 @@ class Cell:
     return self
 
   def mutate(self):
-    #return mutated cell
-    pass
+    change = r.randrange(1, 5, 1)
+    if(change == 1):
+      self.resistence1 += 1
+    if(change == 2):
+      self.resistence2 += 1
+    if(change == 3):
+      self.resistence1 -= 1
+    if(change == 4):
+      self.resistence2 -= 1
+    return self
 
   def reproduce(self):
-    #return self w/ or w/o copies
-    pass
+    if(r.randrange(1, 5, 1) == 1):
+      return [self, self]
+    return self
 
     
 class Tumor:
@@ -45,4 +54,3 @@ if __name__ == "__main__": # All values currently shown below are just test valu
     LinearTradeoff(0.3)
     # Not gonna bother running the last two functions. Program shows they run
     # just fine.
-    
