@@ -1,3 +1,4 @@
+#Author: Tom Nicholson
 # Execute the entire program from this file. This code isn't complete.
 
 import Functions as funct # We need Functions.py for this to run.
