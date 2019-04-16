@@ -16,16 +16,16 @@ class Cell:
   def mutate(self):
     change = r.randrange(1, 6, 1)
     if(change == 1):
-      self.resistence1 += 1
+      return Cell(health = self.health, resistence1 = self.resistence1 + 1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
     if(change == 2):
-      self.resistence2 += 1
+      return Cell(health = self.health, resistence1 = self.resistence1, resistence2 = self.resistence2 + 1, mortalityRate = self.mortalityRate)
     if(change == 3):
       if(self.resistence1 > 0):
-        self.resistence1 -= 1
+        return Cell(health = self.health, resistence1 = self.resistence1 - 1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
     if(change == 4):
       if(self.resistence2 > 0):
-        self.resistence2 -= 1
-    return self
+        return Cell(health = self.health, resistence1 = self.resistence1, resistence2 = self.resistence2 - 1, mortalityRate = self.mortalityRate)
+    return Cell(health = self.health, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
 
   def reproduce(self, childHealth):
     oldSelf = Cell(health = self.health, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
@@ -157,4 +157,5 @@ def compareStrats(strat1, strat2):
       results.append(False)
   return sum(results)/len(results)
 
-print(compareStrats([1, 2, 1, 2, 2], [1, 2]))
+print(compareStrats([1, 2, 1, 2, 2], [2, 1, 2, 1, 1]))
+trial(cycles=39, treatmentStrategy = [2])
