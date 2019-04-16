@@ -38,9 +38,9 @@ class Cell:
   def treat(self, drug):
     rand1 = r.randrange(1, 4 + self.resistence1, 1)
     rand2 = r.randrange(1, 4 + self.resistence2, 1)
-    if (drug == 1 & (rand1 != 1 and rand1 != 2)):
+    if ((drug == 1) & (rand1 != 1 and rand1 != 2)):
       return Cell(health = self.health, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
-    if (drug == 2 & (rand2 != 1 and rand2 != 2)):
+    if ((drug == 2) & (rand2 != 1 and rand2 != 2)):
       return Cell(health = self.health, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
     if (self.health - 20 > 0):
       return Cell(health = self.health - 20, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
