@@ -3,7 +3,7 @@ import random as r
 import math as m
 
 class Cell:
-  def __init__(self, health = 100, resistence1 = 0, resistence2 = 0, mortalityRate = 10):
+  def __init__(self, health = 100, resistence1 = 0, resistence2 = 0, mortalityRate = 20):
         self.health = health
         self.resistence1 = resistence1
         self.resistence2 = resistence2
