@@ -30,7 +30,7 @@ class Cell:
   def reproduce(self, childHealth):
     oldSelf = Cell(health = self.health, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
     rand = r.randrange(1, 6, 1)
-    if(rand == 1 or rand == 2):
+    if((rand == 1) or (rand == 2)):
       child = Cell(health = childHealth + 20, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
       return [oldSelf, child]
     return [oldSelf]
@@ -38,9 +38,9 @@ class Cell:
   def treat(self, drug):
     rand1 = r.randrange(1, 4 + self.resistence1, 1)
     rand2 = r.randrange(1, 4 + self.resistence2, 1)
-    if ((drug == 1) & (rand1 != 1 and rand1 != 2)):
+    if ((drug == 1) & ((rand1) != 1 and (rand1 != 2))):
       return Cell(health = self.health, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
-    if ((drug == 2) & (rand2 != 1 and rand2 != 2)):
+    if ((drug == 2) & ((rand2 != 1) and (rand2 != 2))):
       return Cell(health = self.health, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
     if (self.health - 20 > 0):
       return Cell(health = self.health - 20, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
@@ -78,7 +78,7 @@ def trial(cycles = 13, treatmentStrategy = [], maxTumorSize = 1000, tumorFailure
       tumor.reproduce()
     tumor.mutate()
     tumor.age()
-    if(maxTumorSize < len(tumor.population) & tumorFailureSize):
+    if(maxTumorSize < len(tumor.population) and tumorFailureSize):
       print("failed at " + str(i))
       return
   
