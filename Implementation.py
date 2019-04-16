@@ -159,6 +159,6 @@ def compareStrats(strat1, strat2):
 
 g = list()
 for x in range(1,100):
-  g.append(nptrial(cycles=39, treatmentStrategy = [2,2,1,2,1,1,2]))
+  g.append(nptrial(cycles=39, treatmentStrategy = [2,2,1,2,1,1,2,1]))
 print("+++++++++++++")
 print(sum(g)/len(g))
