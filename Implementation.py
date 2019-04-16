@@ -42,8 +42,8 @@ class Cell:
       return Cell(health = self.health, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
     if ((drug == 2) & ((rand2 != 1) and (rand2 != 2))):
       return Cell(health = self.health, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
-    if (self.health - 20 > 0):
-      return Cell(health = self.health - 20, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
+    if (self.health - 40 > 0):
+      return Cell(health = self.health - 40, resistence1 = self.resistence1, resistence2 = self.resistence2, mortalityRate = self.mortalityRate)
 
 
 class Tumor:
@@ -157,5 +157,8 @@ def compareStrats(strat1, strat2):
       results.append(False)
   return sum(results)/len(results)
 
-print(compareStrats([1, 2, 1, 2, 2], [2, 1, 2, 1, 1]))
-trial(cycles=39, treatmentStrategy = [2])
+g = list()
+for x in range(1,100):
+  g.append(nptrial(cycles=39, treatmentStrategy = [1]))
+print("+++++++++++++")
+print(sum(g)/len(g))
